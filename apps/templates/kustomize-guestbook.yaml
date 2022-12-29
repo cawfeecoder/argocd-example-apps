@@ -10,6 +10,9 @@ spec:
     namespace: kustomize-guestbook
     server: {{ .Values.spec.destination.server }}
   project: default
+  syncPolicy:
+    automated:
+      prune: true
   source:
     path: kustomize-guestbook
     repoURL: {{ .Values.spec.source.repoURL }}
